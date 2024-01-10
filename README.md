@@ -1,2 +1,3 @@
 # cs257_panditk
-This is for the Software Design class
+This repository is for the Software Design class. 
+Creation Date: Jan 10, 2024.
