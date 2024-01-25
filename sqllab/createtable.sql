@@ -4,6 +4,6 @@ CREATE TABLE earthquakes (
   latitude real,
   longitude real,
   quakedepth real,
-  mag real,
+  magnitude real,
   place text
 );
