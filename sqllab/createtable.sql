@@ -3,7 +3,7 @@ CREATE TABLE earthquakes (
   quaketime time with time zone,
   latitude real,
   longitude real,
-  quakedepth real,
-  magnitude real,
+  depth real,
+  mag real,
   place text
 );
