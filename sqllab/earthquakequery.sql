@@ -1,2 +1,6 @@
+SELECT * FROM earthquakes WHERE depth BETWEEN 0 AND 50 ORDER BY mag DESC LIMIT 15;
 
-q
+SELECT * FROM earthquakes ORDER BY quaketime DESC LIMIT 10;
+
+SELECT * FROM earthquakes WHERE latitude BETWEEN 10 AND 20 AND longitude BETWEEN -170 AND -120
+
