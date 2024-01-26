@@ -17,4 +17,17 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
+    citiessql = " CREATE TABLE cities ... "
+
+    stateabbsql = "CREATE TABLE stateabb"
+
+
+
+    cur = conn.cursor()
+
+    cur.execute(  citiessql   )
+    cur.execute(  stateabbsql   )
+
+    conn.commit()
+
     return None
