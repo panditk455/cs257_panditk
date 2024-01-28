@@ -36,3 +36,5 @@ def test_connection():
     conn.commit()
 
     return None
+
+test_connection()
