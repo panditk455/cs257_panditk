@@ -17,11 +17,16 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
-    citiessql = " CREATE TABLE cities ... "
+    citiessql = """
+    CREATE TABLE cities 
+    (id SERIAL PRIMARY KEY, city VARCHAR(100), state VARCHAR(50), population INT,
+    lat DOUBLE PRECISION,lon DOUBLE PRECISION);
+    """
 
-    stateabbsql = "CREATE TABLE stateabb"
-
-
+    stateabbsql = """ 
+    CREATE TABLE stateabb 
+    (id SERIAL PRIMARY KEY, state VARCHAR(50), abbreviation VARCHAR(5));
+    """
 
     cur = conn.cursor()
 
