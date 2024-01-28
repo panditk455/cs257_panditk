@@ -17,6 +17,10 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
+    dropsql = """ DROP TABLE IF EXISTS cities;  DROP TABLE IF EXISTS stateabb; """
+
+
+
     citiessql = """
     CREATE TABLE cities 
     (city VARCHAR(100), state VARCHAR(50), population INT,
@@ -30,6 +34,7 @@ def test_connection():
 
     cur = conn.cursor()
 
+    cur.execute(dropsql)
     cur.execute(  citiessql   )
     cur.execute(  stateabbsql   )
 
