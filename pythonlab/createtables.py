@@ -19,13 +19,13 @@ def test_connection():
 
     citiessql = """
     CREATE TABLE cities 
-    (id SERIAL PRIMARY KEY, city VARCHAR(100), state VARCHAR(50), population INT,
+    (city VARCHAR(100), state VARCHAR(50), population INT,
     lat DOUBLE PRECISION,lon DOUBLE PRECISION);
     """
 
     stateabbsql = """ 
     CREATE TABLE stateabb 
-    (id SERIAL PRIMARY KEY, state VARCHAR(50), abbreviation VARCHAR(5));
+    ( state VARCHAR(50), abbreviation VARCHAR(5));
     """
 
     cur = conn.cursor()
