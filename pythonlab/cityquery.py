@@ -68,7 +68,7 @@ def test_query_two():
     cur = conn.cursor()
     
     secondsql = """
-    SELECT City, 
+    SELECT City
     FROM cities 
     ORDER BY population DESC
     LIMIT 1"""
