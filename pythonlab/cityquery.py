@@ -145,7 +145,7 @@ def test_query_four():
     eastsql = """
     SELECT city
     FROM cities
-    ORDER BY lon DESC
+    ORDER BY lon ASC
     LIMIT 1
     """
     
@@ -156,7 +156,7 @@ def test_query_four():
     westsql = """
     SELECT city
     FROM cities
-    ORDER BY lon ASC
+    ORDER BY lon DESC
     LIMIT 1
     """
     
