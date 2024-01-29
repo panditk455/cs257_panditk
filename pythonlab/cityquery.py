@@ -217,28 +217,28 @@ def test_query_five():
     WHERE abbreviation = %s
     """
     
-#     cur.execute(abbsql, (input_state,))
+    cur.execute(abbsql, (input_state,))
     
-#     state_name = cur.fetchone()
+    state_name = cur.fetchone()
 
-#     if not state_name:
-#         statename = (input_state,)
+    if not state_name:
+        statename = (input_state,)
 
     
-#     population_sql = """
-#     SELECT SUM(population)
-#     FROM cities 
-#     WHERE state = 
-#     """
+    population_sql = """
+    SELECT SUM(population)
+    FROM cities 
+    WHERE state = 
+    """
 
-#     cur.execute(population_sql, (state_name,))
+    cur.execute(population_sql, (state_name,))
 
-#     total_population = cur.fetchone()[0] or 0
+    total_population = cur.fetchone()[0] or 0
 
-#     print("The total population of {state_name}, including all cities is :{total_population}")
+    print("The total population of {state_name}, including all cities is :{total_population}")
 
 
-#     cur.close()
-#     conn.close()
+    cur.close()
+    conn.close()
 
-# test_query_five()   
+test_query_five()   
