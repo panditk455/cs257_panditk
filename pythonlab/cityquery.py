@@ -145,7 +145,7 @@ def test_query_four():
     eastsql = """
     SELECT city
     FROM cities
-    ORDER BY lon ASC
+    ORDER BY lon DESC
     LIMIT 1
     """
     
@@ -156,7 +156,7 @@ def test_query_four():
     westsql = """
     SELECT city
     FROM cities
-    ORDER BY lon DESC
+    ORDER BY lon ASC
     LIMIT 1
     """
     
@@ -198,24 +198,24 @@ def test_query_four():
 test_query_four()
 
 
-# def test_query_five():
+def test_query_five():
 
-#     conn = psycopg2.connect(
-#         host="localhost",
-#         port=5432,
-#         database="panditk",
-#         user="panditk",
-#         password="square555cow")
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
 
-#     cur = conn.cursor()
+    cur = conn.cursor()
 
-#     input_state = input("Enter a State name, you can enter an Abbreviation or full name:")
+    input_state = input("Enter a State name, you can enter an Abbreviation or full name:")
 
-#     abbsql = """
-#     SELECT state
-#     FROM stateabb
-#     WHERE abbreviation = %s
-#     """
+    abbsql = """
+    SELECT state
+    FROM stateabb
+    WHERE abbreviation = %s
+    """
     
 #     cur.execute(abbsql, (input_state,))
     
