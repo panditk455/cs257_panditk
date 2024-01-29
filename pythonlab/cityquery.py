@@ -93,39 +93,39 @@ test_query_two()
 
 
 # # This function will help to print out the name of the city with the largest population.
-# def test_query_three():
+def test_query_three():
     
-#     conn = psycopg2.connect(
-#     host="localhost",
-#     port=5432,
-#     database="panditk",
-#     user="panditk",
-#     password="square555cow"
-#     )
+    conn = psycopg2.connect(
+    host="localhost",
+    port=5432,
+    database="panditk",
+    user="panditk",
+    password="square555cow"
+    )
 
-#     cur = conn.cursor()
+    cur = conn.cursor()
 
-#     thirdsql = """
-#     SELECT city,
-#     FROM cities
-#     WHERE state = 'Minnesota' 
-#     ORDER BY population 
-#     LIMIT 1"""
+    thirdsql = """
+    SELECT City
+    FROM cities
+    WHERE state = 'Minnesota' 
+    ORDER BY population 
+    LIMIT 1"""
     
-#     cur.execute( thirdsql )
+    cur.execute( thirdsql )
     
-#     # fetchone Just retuns one row:
-#     row = cur.fetchone()
+    # fetchone Just retuns one row:
+    row = cur.fetchone()
 
-#     if row:
-#         print(f"The city with smallest population in Minnesota is: {row[0]} ")
-#     else:
-#         print(f"No city in Minnesota with the smallest population")
+    if row:
+        print(f"The city with smallest population in Minnesota is: {row[0]} ")
+    else:
+        print(f"No city in Minnesota with the smallest population")
 
-#     cur.close()
-#     conn.close()
+    cur.close()
+    conn.close()
 
-# test_query_three()
+test_query_three()
 
 
 # # This function will help to print out the name of the city with the largest population.
