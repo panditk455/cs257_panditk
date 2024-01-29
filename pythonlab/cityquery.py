@@ -129,73 +129,73 @@ test_query_three()
 
 
 # # This function will help to print out the name of the city with the largest population.
-# def test_query_four():
+def test_query_four():
 
-#     conn = psycopg2.connect(
-#         host="localhost",
-#         port=5432,
-#         database="panditk",
-#         user="panditk",
-#         password="square555cow")
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
 
-#     cur = conn.cursor()
+    cur = conn.cursor()
     
 
-#     # For the state in the farthest east:
-#     eastsql = """
-#     SELECT city
-#     FROM cities
-#     ORDER BY lon DESC
-#     LIMIT 1
-#     """
+    # For the state in the farthest east:
+    eastsql = """
+    SELECT city
+    FROM cities
+    ORDER BY lon DESC
+    LIMIT 1
+    """
     
-#     cur.execute( eastsql )
-#     eastestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
+    cur.execute( eastsql )
+    eastestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
 
-#     # For the city in the farthest west:
-#     westsql = """
-#     SELECT city
-#     FROM cities
-#     ORDER BY lon ASC
-#     LIMIT 1
-#     """
+    # For the city in the farthest west:
+    westsql = """
+    SELECT city
+    FROM cities
+    ORDER BY lon ASC
+    LIMIT 1
+    """
     
-#     cur.execute( westsql )
-#     westestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
+    cur.execute( westsql )
+    westestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
 
-#     # For the one in the farthest north:
-#     northsql = """
-#     SELECT city
-#     FROM cities
-#     ORDER BY lat DESC
-#     LIMIT 1;
-#     """
+    # For the one in the farthest north:
+    northsql = """
+    SELECT city
+    FROM cities
+    ORDER BY lat DESC
+    LIMIT 1;
+    """
 
-#     cur.execute( northsql )
-#     northestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
+    cur.execute( northsql )
+    northestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
 
 
-#     # For the one in the farthest south:
-#     southsql = """
-#     SELECT city
-#     FROM cities
-#     ORDER BY lat ASC
-#     LIMIT 1;
-#     """
+    # For the one in the farthest south:
+    southsql = """
+    SELECT city
+    FROM cities
+    ORDER BY lat ASC
+    LIMIT 1;
+    """
 
-#     cur.execute( southsql )
-#     southestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
+    cur.execute( southsql )
+    southestcity = cur.fetchone()[0] if cur.rowcount > 0 else "No cities were found."
     
-#     print (f"Furthest North: {northestcity}")
-#     print (f"Furthest East: {eastestcity}")
-#     print (f"Furthest West: {westestcity}")
-#     print (f"Furthest South: {southestcity}")
+    print (f"Furthest North: {northestcity}")
+    print (f"Furthest East: {eastestcity}")
+    print (f"Furthest West: {westestcity}")
+    print (f"Furthest South: {southestcity}")
     
 
-#     cur.close()
-#     conn.close()
+    cur.close()
+    conn.close()
 
-# test_query_four()
+test_query_four()
 
 
 # def test_query_five():
