@@ -198,8 +198,9 @@ def test_query_four():
 test_query_four()
 
 
-def test_query_five():
 
+def test_query_five():
+    
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -216,29 +217,27 @@ def test_query_five():
     FROM stateabb
     WHERE abbreviation = %s
     """
-    
+
     cur.execute(abbsql, (input_state,))
-    
+
     state_name = cur.fetchone()
 
     if not state_name:
-        statename = (input_state,)
+        state_name = (input_state,)
 
-    
     population_sql = """
     SELECT SUM(population)
     FROM cities 
-    WHERE state = 
+    WHERE state = %s
     """
 
-    cur.execute(population_sql, (state_name,))
+    cur.execute(population_sql, state_name)  # Passing state_name as a tuple
 
     total_population = cur.fetchone()[0] or 0
 
-    print("The total population of {state_name}, including all cities is :{total_population}")
-
+    print(f"The total population of {input_state}, including all cities is: {total_population}")
 
     cur.close()
     conn.close()
 
-test_query_five()   
+test_query_five()
