@@ -6,6 +6,7 @@ import psycopg2
 # This function tests to make sure that you can connect to the database
 def test_connection():
 
+
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -63,9 +64,9 @@ def test_query_two():
         database="panditk",
         user="panditk",
         password="square555cow")
-
+        
     cur = conn.cursor()
-
+    
     secondsql = """
     SELECT city, 
     FROM cities 
@@ -81,7 +82,7 @@ def test_query_two():
     if row:
         print(f"The city with lagest population:{row[0]} ")
     else:
-        print("Opps! Something went wrong")
+        print(f"Opps! Something went wrong")
 
     cur.close()
     conn.close()
@@ -241,6 +242,3 @@ test_query_two()
 #     conn.close()
 
 # test_query_five()   
-
-
-
