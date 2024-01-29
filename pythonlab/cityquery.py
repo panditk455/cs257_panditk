@@ -1,3 +1,6 @@
+# Author: Kritika Pandit
+# Edited on: Jan 29, 2024
+
 # These are different queries which does specifc function as given:
 
 import psycopg2
@@ -198,6 +201,11 @@ def test_query_four():
 test_query_four()
 
 
+# Have the user enter a State from the keyboard.
+#  Print the Total population of all the cities in that state.
+#   The user should be able to enter either an abbreviation or the full name of the sate. 
+#   If the user enters an abbreviation, then you should look up the abbreviation in
+#    the second table to learn the full name of the state.
 
 def test_query_five():
     
