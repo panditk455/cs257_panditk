@@ -23,36 +23,36 @@ def test_connection():
 # This Determine if Northfield is present in the database. 
 # If it is, print its location (Latitude and Longitude).
 #  If it is not, print an appropriate message for the user.
-def test_query_one():
+# def test_query_one():
 
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="panditk",
-        user="panditk",
-        password="square555cow"
-        )
+#     conn = psycopg2.connect(
+#         host="localhost",
+#         port=5432,
+#         database="panditk",
+#         user="panditk",
+#         password="square555cow"
+#         )
 
-    cur = conn.cursor()
+#     cur = conn.cursor()
 
-    firstsql = """
-    SELECT City, lat, lon
-    FROM cities
-    WHERE City = 'Northfield';
-    """   
+#     firstsql = """
+#     SELECT City, lat, lon
+#     FROM cities
+#     WHERE City = 'Northfield';
+#     """   
     
-    cur.execute( firstsql )
-    row = cur.fetchone()
+#     cur.execute( firstsql )
+#     row = cur.fetchone()
 
-    if row:
-        print(f"Northfield is present in the dataase, where Location: Latitude {row[1]}, Longitude {row[2]}")
-    else:
-        print(f"Sorry, Northfield is not present in the database")
+#     if row:
+#         print(f"Northfield is present in the dataase, where Location: Latitude {row[1]}, Longitude {row[2]}")
+#     else:
+#         print(f"Sorry, Northfield is not present in the database")
 
-    cur.close()
-    conn.close()
+#     cur.close()
+#     conn.close()
     
-test_query_one()
+# test_query_one()
 
 # This function will help to print out the name of the city with the largest population.
 def test_query_two():
