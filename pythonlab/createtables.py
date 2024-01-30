@@ -17,19 +17,20 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
+    # To drop the previous tables before making a new one.
     dropsql = """ DROP TABLE IF EXISTS cities;  DROP TABLE IF EXISTS stateabb; """
 
 
 
     citiessql = """
     CREATE TABLE cities 
-    (city VARCHAR(100), state VARCHAR(50), population INT,
-    lat DOUBLE PRECISION,lon DOUBLE PRECISION);
+    (city text, state text, population int,
+    lat float,lon float;
     """
 
     stateabbsql = """ 
     CREATE TABLE stateabb 
-    ( state VARCHAR(50), abbreviation VARCHAR(5));
+    ( state text, abbreviation text);
     """
 
     cur = conn.cursor()
