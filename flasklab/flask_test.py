@@ -55,7 +55,7 @@ def my_pop(abbrev):
 
     total_population = cur.fetchone()[0] or 0
 
-    return total_population
+    return str(total_population)
 
     
 
