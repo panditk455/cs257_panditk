@@ -23,8 +23,8 @@ def my_sum(num1, num2):
     sum = int(num1) + int(num2)
     return str(sum)
 
-@app.route('/pop/abbrev')
-def my_pop(pop, abbrev):
+@app.route('/pop/<abbrev>')
+def my_pop(abbrev):
 
     conn = psycopg2.connect(
         host="localhost",
@@ -45,14 +45,13 @@ def my_pop(pop, abbrev):
 
     state_name = cur.fetchone()
 
-    if not state_name:
-        state_name = (abbrev,)
-
+    
     pop_sql = """SELECT SUM(population)
     FROM cities 
     WHERE state = %s
     """
-    cur.execute(pop_sql, state_name)  # Passing state_name as a tuple
+
+    cur.execute(pop_sql, state_name) 
 
     total_population = cur.fetchone()[0] or 0
 
