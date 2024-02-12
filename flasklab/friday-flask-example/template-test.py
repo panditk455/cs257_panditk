@@ -45,10 +45,11 @@ def randsentence():
     adjective = random.choice(adjectives)
     year = random.choice(years)
 
-    required_sentence = "{name} the {adjective} was born in {city} in {year}" 
+    required_sentence = f"{name} the {adjective} was born in {city} in {year}" 
 
     return render_template('index.html', required_sentence=required_sentence)  
 
 if __name__ == '__main__':
     my_port = 5131
     app.run(host='0.0.0.0', port=my_port)
+
