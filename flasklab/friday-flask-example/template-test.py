@@ -5,6 +5,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 names = ["Kritika", "Will", "Kripa", "Navin", "Heidi", "Daniel", "Jeebika", "Darshan"]
 adjectives = ["nice", "awesome", "good", "kind", "horrible", "honest", "punctual"]
 years = list(range(1992, 2024))
@@ -13,14 +14,7 @@ years = list(range(1992, 2024))
 def welcome():
     return render_template("index.html")
 
-@app.route('/rand/<low>/<high>')
-def rand(low, high):
-    low_int = int(low)
-    high_int = int(high)
-    num = random.randint(low_int, high_int)
-    return render_template("random.html", randNum=num)
-
-@app.route('/randsentence')
+@app.route('/randsentence')  # Define the route for randsentence
 def randsentence():
     conn = psycopg2.connect(
         host="localhost",
@@ -49,7 +43,13 @@ def randsentence():
 
     return render_template('index.html', required_sentence=required_sentence)  
 
+@app.route('/rand/<low>/<high>')
+def rand(low, high):
+    low_int = int(low)
+    high_int = int(high)
+    num = random.randint(low_int, high_int)
+    return render_template("random.html", randNum=num)
+
 if __name__ == '__main__':
     my_port = 5131
     app.run(host='0.0.0.0', port=my_port)
-
