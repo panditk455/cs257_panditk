@@ -31,28 +31,22 @@ def randsentence():
     LIMIT 1"""
 
     cur.execute(my_sql)
-    city = cur.fetchone()[0]  
+    city = cur.fetchone()[0]
     cur.close()
     
     name = random.choice(names)
     adjective = random.choice(adjectives)
     year = random.choice(years)
 
-    required_sentence = "{name} the {adjective} was born in {city} in {year}" 
+    required_sentence = f"{name} the {adjective} was born in {city} in {year}" 
 
     return render_template('index.html', required_sentence=required_sentence)  
 
-@app.route('/rand/<low>/<high>') 
-
-@app.route('/rand/')
-def rand(low=None, high=None):
-    if low and high:
-        low_int = int(low)
-        high_int = int(high)
-        num = random.randint(low_int, high_int)
-    else:
-        num = random.randint(0, 100) 
-
+@app.route('/rand/<low>/<high>')
+def rand(low, high):
+    low_int = int(low)
+    high_int = int(high)
+    num = random.randint(low_int, high_int)
     return render_template("random.html", randNum=num)
 
 if __name__ == '__main__':
