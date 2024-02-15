@@ -39,5 +39,4 @@ def randsentence():
     return render_template('myindex.html', required_sentence=required_sentence)  
 
 if __name__ == '__main__':
-    my_port = 5131
-    app.run(host='0.0.0.0', port=my_port)
+    app.run(host='0.0.0.0', port=5131)
