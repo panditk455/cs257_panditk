@@ -9,7 +9,7 @@ names = ["Kritika", "Will", "Kripa", "Navin", "Heidi", "Daniel", "Jeebika", "Dar
 adjectives = ["nice", "awesome", "good", "kind", "horrible", "honest", "punctual"]
 years = list(range(1992, 2024))
 
-@app.route('/')
+@app.route('/randsentence')
 def randsentence():
     conn = psycopg2.connect(
         host="localhost",
