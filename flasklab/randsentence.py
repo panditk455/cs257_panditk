@@ -1,4 +1,5 @@
 import random
+
 import psycopg2
 from flask import Flask, render_template
 
@@ -8,7 +9,7 @@ names = ["Kritika", "Will", "Kripa", "Navin", "Heidi", "Daniel", "Jeebika", "Dar
 adjectives = ["nice", "awesome", "good", "kind", "horrible", "honest", "punctual"]
 years = list(range(1992, 2024))
 
-@app.route('/randsentence')
+@app.route('/')
 def randsentence():
     conn = psycopg2.connect(
         host="localhost",
@@ -35,7 +36,7 @@ def randsentence():
 
     required_sentence = f"{name} the {adjective} was born in {city} in {year}"
 
-    return render_template('index.html', required_sentence=required_sentence)  
+    return render_template('myindex.html', required_sentence=required_sentence)  
 
 if __name__ == '__main__':
     my_port = 5131
