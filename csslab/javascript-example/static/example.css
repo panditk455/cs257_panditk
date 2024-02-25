@@ -1,18 +1,18 @@
 .my-class {
   text-align: center;
   color: lavenderblush;
-  background-color: pink;
+  background-color: Maroon;
 }
 
 .center-para {
   text-align: center;
   margin-top: 20px;
-  color: rgb(171, 73, 90);
-  background-color: maroon;
+  color: black(171, 73, 90);
+  background-color: white;
 }
 
 .big-button {
   font-size: large;
-  color: rgb(171, 73, 90);
-  background-color: rgb(125, 93, 125);
+  color: black(171, 73, 90);
+  background-color: pink(125, 93, 125);
 }
