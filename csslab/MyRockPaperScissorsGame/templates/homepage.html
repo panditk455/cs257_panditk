@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Rocks Paper Scissors Game</title>
-  <link rel="stylesheet" href="example.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='example.css') }}">
+  <script src="{{ url_for('static', filename='example.js') }}" charset="utf-8"></script>
+  <img src="{{ url_for('static', filename='images/rock.jpg') }}" width="75" height="75" />
+
+
 </head>
 
 
@@ -40,6 +44,6 @@
 
   <p id="action-message">Make your move</p>
 
-  <script src="example.js" charset="utf-8"></script>
+  
 </body>
 </html>
