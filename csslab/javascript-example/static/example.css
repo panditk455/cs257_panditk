@@ -1,13 +1,15 @@
 .my-class{
   text-align: center;
-  color: blue;
+  color: lavenderblush;
 }
 
 .center-para{
   text-align: center;
   margin-top: 20px;
+  color: rgb(171, 73, 90);
 }
 
 .big-button{
   font-size: large;
+  color:rgb(171, 73, 90);
 }

@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/RandomColorAndNumber')
 def welcome():
     message = "Welcome to My Example Webpage."
     message = message + " This text was produced by concatenating strings in Python!"
