@@ -5,9 +5,11 @@
   <title>Rocks Paper Scissors Game</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='example.css') }}">
   <script src="{{ url_for('static', filename='example.js') }}" charset="utf-8"></script>
-  <img src="{{ url_for('static', filename='images/rock.jpg') }}" width="75" height="75" />
-  <img src="{{ url_for('static', filename='images/paper.jpg') }}" width="75" height="75" />
-<img src="{{ url_for('static', filename='images/scissors.jpg') }}" width="75" height="75" />
+
+
+  <img src="{{ url_for('images', filename='rock.jpg') }}" width="75" height="75" />
+  <img src="{{ url_for('images', filename='paper.jpg') }}" width="75" height="75" />
+<img src="{{ url_for('images', filename='scissors.jpg') }}" width="75" height="75" />
 
 
 </head>
