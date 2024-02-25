@@ -1,10 +1,16 @@
+
+// For generating  random number
 function generateAndColorNumber() {
   let randomNumber = Math.floor(Math.random() * 100) + 1; // Generate random number between 1 and 100
   let randomNumberElement = document.getElementById("random-number");
+
+
   randomNumberElement.textContent = "Random Number: " + randomNumber;
   randomNumberElement.style.color = getRandomColor();
 }
 
+
+//For getting a random color
 function getRandomColor() {
   let letters = '0123456789ABCDEF';
   let color = '#';

@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route('/RandomColorAndNumber')
 def welcome():
-    message = "Welcome to My Example Webpage."
-    message = message + " This text was produced by concatenating strings in Python!"
+    message = "Welcome to Kritika's Website."
+    message = message + " We are generating Random numbers with different colors."
     return render_template("homepage.html", someText = message)
 
 if __name__ == '__main__':
